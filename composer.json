@@ -1,0 +1,6 @@
+{
+    "require": {
+        "contentful/contentful": "^6.0",
+        "contentful/rich-text": "^3.1"
+    }
+}
