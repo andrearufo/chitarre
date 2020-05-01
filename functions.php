@@ -80,6 +80,10 @@ class Chitarra
         }
     }
 
+    public function acquisita(){
+        return $this->acquisita ?: $this->void();
+    }
+
     public function seriale(){
         return $this->seriale ?: $this->void();
     }
