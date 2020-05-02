@@ -3,3 +3,7 @@
 img{
     @extend .img-fluid;
 }
+
+.void{
+    color: $text-muted;
+}

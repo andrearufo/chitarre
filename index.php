@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <section id="header">
+    <header class="py-5">
         <div class="container">
 
             <h1>Le mie chitarre</h1>
@@ -32,7 +32,13 @@
                 <?php endforeach ?>
             </ol>
 
-            <hr>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        <div class="container">
 
             <?php foreach ($chitarre as $c): ?>
 
@@ -40,10 +46,7 @@
                     <div class="card">
                         <div class="card-header">
 
-                            <h3>
-                                <?php echo $c->title() ?>
-                            </h3>
-
+                            <h3><?php echo $c->title() ?></h3>
                             <small>Ultimo aggiornamento <?php echo $c->update('d/m/Y H:i') ?></small>
 
                         </div>
@@ -66,16 +69,28 @@
                                 <div class="col-lg-3">
 
                                     <dl>
-                                        <dt>Corpo</dt> <dd><?php echo $c->corpo() ?></dd>
-                                        <dt>Top</dt> <dd><?php echo $c->top() ?></dd>
+                                        <?php if ($c->corpo()): ?>
+                                            <dt>Corpo</dt> <dd><?php echo $c->corpo() ?></dd>
+                                        <?php endif; ?>
+                                        <?php if ($c->top()): ?>
+                                            <dt>Top</dt> <dd><?php echo $c->top() ?></dd>
+                                        <?php endif; ?>
+                                        <?php if ($c->manico()): ?>
+                                        <?php endif; ?>
                                         <dt>Manico</dt> <dd><?php echo $c->manico() ?></dd>
-                                        <dt>Tastiera</dt> <dd><?php echo $c->tastiera() ?></dd>
+                                        <?php if ($c->tastiera()): ?>
+                                            <dt>Tastiera</dt> <dd><?php echo $c->tastiera() ?></dd>
+                                        <?php endif; ?>
                                         <dt>Numero tasti</dt> <dd><?php echo $c->tasti() ?></dd>
                                         <dt>Colore</dt> <dd><?php echo $c->colore() ?></dd>
                                         <dt>Tipo di ponte</dt> <dd><?php echo $c->ponte() ?></dd>
                                         <dt>Configurazione pickup</dt> <dd><?php echo $c->configurazione() ?></dd>
-                                        <dt>Tipo di pickups</dt> <dd><?php echo $c->pickups() ?></dd>
-                                        <dt>Corde</dt> <dd><?php echo $c->corde() ?></dd>
+                                        <?php if ($c->pickups()): ?>
+                                            <dt>Tipo di pickups</dt> <dd><?php echo $c->pickups() ?></dd>
+                                        <?php endif; ?>
+                                        <?php if ($c->corde()): ?>
+                                            <dt>Corde</dt> <dd><?php echo $c->corde() ?></dd>
+                                        <?php endif; ?>
                                     </dl>
 
                                 </div>
@@ -103,7 +118,17 @@
             <?php endforeach; ?>
 
         </div>
-    </section>
+    </main>
+
+    <hr>
+
+    <footer class="py-5">
+        <div class="container">
+
+            Un personalissimo progetto di Andrea Rufo <a href="http://www.andrearufo.it">andrearufo.it</a>
+
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

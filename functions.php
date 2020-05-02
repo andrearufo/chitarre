@@ -89,19 +89,19 @@ class Chitarra
     }
 
     public function corpo(){
-        return $this->corpo ?: $this->void();
+        return $this->corpo ?: false;
     }
 
     public function top(){
-        return $this->top ?: $this->void();
+        return $this->top ?: false;
     }
 
     public function manico(){
-        return $this->manico ?: $this->void();
+        return $this->manico ?: false;
     }
 
     public function tastiera(){
-        return $this->tastiera ?: $this->void();
+        return $this->tastiera ?: false;
     }
 
     public function tasti(){
@@ -121,7 +121,7 @@ class Chitarra
     }
 
     public function pickups(){
-        return $this->pickups ?: $this->void();
+        return $this->pickups ?: false;
     }
 
     public function corde(){
@@ -129,7 +129,7 @@ class Chitarra
     }
 
     public function scalaCorde(){
-        return $this->scalaCorde ?: $this->void();
+        return $this->scalaCorde ?: false;
     }
 
     public function accordatura(){
