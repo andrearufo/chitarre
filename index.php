@@ -80,7 +80,9 @@ include 'functions.php';
                                                 <dt>Voto</dt> <dd><?php echo $c->voto() ?></dd>
                                                 <dt>Produzione</dt> <dd><?php echo $c->produzione() ?></dd>
                                                 <dt>Costo</dt> <dd><?php echo $c->costo() ?></dd>
-                                                <dt>Scala Corde</dt> <dd><?php echo $c->scalaCorde() ?></dd>
+                                                <?php if ($c->scalaCorde()): ?>
+                                                    <dt>Scala Corde</dt> <dd><?php echo $c->scalaCorde() ?></dd>
+                                                <?php endif; ?>
                                                 <dt>Accordatura</dt> <dd><?php echo $c->accordatura() ?></dd>
                                             </dl>
                                         </div>

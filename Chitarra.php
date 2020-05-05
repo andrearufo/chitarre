@@ -77,7 +77,7 @@ class Chitarra
     }
 
     public function seriale(){
-        return $this->seriale ?: $this->void();
+        return strtoupper($this->seriale) ?: $this->void();
     }
 
     public function corpo(){
